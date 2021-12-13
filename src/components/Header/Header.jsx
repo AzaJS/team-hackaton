@@ -32,12 +32,12 @@ const Header = () => {
     },
   ];
   return (
-    <div className="header">
+    <div className={location.pathname === "/" ? ("header_active"):("header")}>
       <div className="navbar">
         <Link to="/">
           <img
             style={{ marginLeft: "100px", marginBottom: "15px" }}
-            width="110px"
+            width="100px"
             src="https://cityherowear.com/wp-content/uploads/2020/07/city_hero_logo_700x700-91x91.jpg"
             alt="logo"
           />
