@@ -1,15 +1,17 @@
-import React from 'react';
-import AddProduct from './components/AddProduct/AddProduct';
-import "antd/dist/antd.css"
-import "./App.css"
-import ProductsList from './components/ProductsList/ProductsList';
+import React from "react";
+import Header from "./components/Header/Header";
+
+import "./App.css";
+import "antd/dist/antd.css";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "./Routing";
 
 const App = () => {
   return (
-    <div>
-      <AddProduct />
-      <ProductsList />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routing />
+    </BrowserRouter>
   );
 };
 
