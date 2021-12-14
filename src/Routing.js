@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 
 import Men from "./components/Men/Men";
 import Women from "./components/Women/Women";
@@ -7,9 +7,10 @@ import Gallery from "./components/Gallery/Gallery";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Contacts from "./components/Contacts/Contacts";
 import Home from "./components/Home/Home";
-// import { useAuth } from "./contexts/authContext";
-// import AdminPage from "./components/AdminPage/AdminPage";
-import Error404 from "./components/AdminPage/Error404";
+import Auth from "./components/Auth/Auth";
+import Cart from "./components/Cart/Cart";
+import { useAuth } from "./contexts/authContext";
+import AdminPage from "./components/AdminPage/AdminPage";
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -42,34 +43,43 @@ const Routing = () => {
       link: "/contacts",
       element: <Contacts />,
       id: 6,
+    },
+    {
+      link: "/auth",
+      element: <Auth />,
+      id: 7,
+    },
+    {
+      link: "/cart",
+      element: <Cart />,
+      id: 8,
     }
   ];
-//   const ADMIN_ROUTES = [
-//     {
-//       link: "/admin",
-//       element: <AdminPage />,
-//       id: 1,
-//     },
-//   ];
-//   const { user } = useAuth();
+  const ADMIN_ROUTES = [
+    {
+      link: "/admin",
+      element: <AdminPage />,
+      id: 1,
+    },
+  ];
+  const { user } = useAuth();
   return (
     <Routes>
       {PUBLIC_ROUTES.map((item) => (
         <Route path={item.link} element={item.element} />
       ))}
-      {/* {user? ADMIN_ROUTES.map((item) => (
+      {user? ADMIN_ROUTES.map((item) => (
         <Route
           path={item.link}
           element={
-            user.email === "tilekov_janar1@gmail.com" ? (
+            user.email === "tilekovjanar1@gmail.com" ? (
               item.element
             ) : (
               <Navigate replace to="*" />
             )
           }
         />
-      )) : null} */}
-      <Route path="*" element={<Error404 />} />
+      )) : null}
     </Routes>
   );
 };

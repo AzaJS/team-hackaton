@@ -1,5 +1,7 @@
-import React, { useReducer } from "react";
 import axios from "axios";
+import React, { useReducer } from "react";
+// import axios from "axios";
+
 import { CASE_GET_ONE_PRODUCT, CASE_GET_PRODUCTS } from "../helpers/cases";
 import { PRODUCTS_API } from "../helpers/consts"
 
