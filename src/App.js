@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 import "./App.css";
 import "antd/dist/antd.css";
@@ -11,6 +12,7 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Routing />
+      <Footer />
     </BrowserRouter>
   );
 };
