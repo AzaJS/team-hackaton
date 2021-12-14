@@ -38,7 +38,6 @@ const Home = () => {
           />{" "}
         </div>
       </Carousel>
-    </div>
   );
 };
 
