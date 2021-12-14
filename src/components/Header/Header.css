@@ -4,6 +4,29 @@ a {
   font-weight: bold;
 }
 
+nav {
+  height: 5vh;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 4vw;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.sign-btn {
+  /* background-color: rgb(255, 255, 255); */
+  background-color: rgba(0, 0, 0, 0.712);
+  border: none;
+  /* color: #4a4a4a; */
+  color: white;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 .header_active {
   height: 23vh;
   width: 100%;
@@ -20,7 +43,9 @@ a {
   justify-content: space-between;
   /* position: absolute;
   z-index: 1; */
-  background-color: rgba(255, 255, 255, 0.438);
+  background-image: url("https://img.freepik.com/free-vector/decorative-damask-pattern-vintage-ornament-baroque-flowers-and-silver-venetian-ornate-floral-ornaments-seamless-background_102902-1379.jpg?size=338&ext=jpg");
+  box-shadow: 3px 3px 3px grey;
+
 }
 
 .navbar {
@@ -30,10 +55,10 @@ a {
 }
 
 .navbar__item {
-    color: black;
-  }
+  color: black;
+}
 
-  .navbar__item-active {
-    border-bottom: 1px solid grey;
-    color: black;
-  }
+.navbar__item-active {
+  border-bottom: 1px solid grey;
+  color: black;
+}
