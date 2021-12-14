@@ -3,12 +3,11 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <Carousel autoplay>
+      <Carousel style={{height: "100vh" ,overflow: "hidden"}} autoplay>
         <div>
           <img
             width="100%"
-            height="730px"
+            // height="100%"
             src="https://cityherowear.com/wp-content/uploads/2021/07/CityHero188363.jpg"
             alt=""
           />{" "}
@@ -38,7 +37,6 @@ const Home = () => {
           />{" "}
         </div>
       </Carousel>
-    </div>
   );
 };
 

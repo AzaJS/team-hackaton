@@ -1,17 +1,17 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/app" 
+import "firebase/compat/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAumWYYRJZ0RSQZ83z3ypfI-UZNeoLYbd0",
   authDomain: "team-hackaton-a-j.firebaseapp.com",
-  databaseURL: "https://team-hackaton-a-j.firebaseio.com",
   projectId: "team-hackaton-a-j",
   storageBucket: "team-hackaton-a-j.appspot.com",
   messagingSenderId: "840404759218",
   appId: "1:840404759218:web:b0208cb45839ab4ba90fab",
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
-export { db };
+const fire = firebase.initializeApp(firebaseConfig)
+
+export default fire;
