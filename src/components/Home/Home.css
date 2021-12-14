@@ -1,11 +1,40 @@
 
-.box {
-  position: absolute;
-}
-
-.center {
+/* .center {
     display: block;
     margin-left: auto;
     margin-right: auto
+} */
+
+/* .home-img {
+  position: relative;
+  display: block;
 }
 
+.home-img::after{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 50%;
+  height: 2000px;
+  display: block;
+} */
+
+/* .img-div {
+  position: absolute;
+  width: 50%;
+  color: aqua;
+  z-index: 1;
+  top: 0;
+  left: 0;
+} */
+
+.img-div {
+  background-color: rgba(0, 0, 0, 0.37);
+  width: 50%;
+  height: 546px;
+  margin-top: -546px;
+  opacity: 0;
+  transition: 0.5s
+}
