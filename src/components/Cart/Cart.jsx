@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Error404 = () => {
+const Cart = () => {
     return (
         <div>
-            
+            cart
         </div>
     );
 };
 
-export default Error404;
+export default Cart;
