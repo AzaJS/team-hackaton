@@ -107,13 +107,13 @@ const Header = () => {
               {email ? (
                 <Link to="/auth">
                   <button className="sign-btn" onClick={handleLogout}>
-                    Log out
+                    Выйти
                   </button>
                 </Link>
               ) : null}
               {email ? null : (
                 <Link to="/auth">
-                  <button className="sign-btn">Log in</button>
+                  <button className="sign-btn">Войти</button>
                 </Link>
               )}
             </div>
