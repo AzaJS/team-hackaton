@@ -36,7 +36,7 @@ const Header = () => {
       <div className="navbar">
         <Link to="/">
           <img
-            style={{ marginLeft: "100px", marginBottom: "15px" }}
+            style={{ marginLeft: "100px", marginBottom: "15px", boxShadow: "3px 3px 3px grey" }}
             width="100px"
             src="https://cityherowear.com/wp-content/uploads/2020/07/city_hero_logo_700x700-91x91.jpg"
             alt="logo"
@@ -45,6 +45,7 @@ const Header = () => {
         <div style={{ display: "flex", justifyContent: "space-evenly"}}>
           {NAV_ITEMS.map((item) => (
             <Link
+            key={item.id}
               to={item.link}
               style={{ display: "flex", justifyContent: "space-evenly" }}
               className={

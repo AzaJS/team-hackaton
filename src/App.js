@@ -5,9 +5,7 @@ import "antd/dist/antd.css";
 import { BrowserRouter } from "react-router-dom";
 
 import Header from "./components/Header/Header"
-import AddProduct from "./components/AddProduct/AddProduct";
 import ProductsContextProvider from "./contexts/productsContext";
-import ProductsList from "./components/ProductsList/ProductsList";
 import Routing from "./Routing";
 
 const App = () => {

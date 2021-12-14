@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Select } from "antd";
 
 import { productsContext } from "../../contexts/productsContext";
 
 const AddProduct = () => {
-  const { createProduct } = useContext(productsContext)
+  const { createProduct } = useContext(productsContext);
   const onFinish = (values) => {
     console.log("Success:", values);
-    createProduct(values)
+    createProduct(values);
   };
   return (
     <Form
@@ -26,6 +26,20 @@ const AddProduct = () => {
         rules={[{ required: true, message: "Please input title!" }]}
       >
         <Input />
+      </Form.Item>
+      <Form.Item
+        label="Sex"
+        name="sex"
+        rules={[{ required: true, message: "Please select sex" }]}
+      >
+        <Select>
+          <Select.Option key="men" value="Men">
+            Men
+          </Select.Option>
+          <Select.Option key="women" value="Women">
+            Women
+          </Select.Option>
+        </Select>
       </Form.Item>
       <Form.Item
         label="Price"
