@@ -57,6 +57,7 @@ const Header = () => {
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           {NAV_ITEMS.map((item) => (
             <Link
+            key={item.id}
               to={item.link}
               style={{ display: "flex", justifyContent: "space-evenly" }}
               className={
