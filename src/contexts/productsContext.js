@@ -1,44 +1,60 @@
-import {
-  collection,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  query,
-} from "firebase/firestore";
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase";
+import React, { useReducer } from "react";
+import axios from "axios";
+import { CASE_GET_ONE_PRODUCT, CASE_GET_PRODUCTS } from "../helpers/cases";
+import { PRODUCTS_API } from "../helpers/consts"
 
 export const productsContext = React.createContext();
 
-const ProductsContextProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const q = query(collection(db, "products"));
-    const unsub = onSnapshot(q, (querySnapshot) => {
-      let productsArray = [];
-      querySnapshot.forEach((doc) => {
-        // itemsArray.push(doc.data())
-        productsArray.push({ ...doc.data(), id: doc.id });
-      });
-      setProducts(productsArray);
-    });
-  }, []);
-  console.log(products);
-
-  const handleDelete = async (id) => {
-    await deleteDoc(doc(db, "products", id));
-  };
-
-  return (
-    <productsContext.Provider
-      value={{
-        products,
-        handleDelete,
-      }}
-    >
-      {children}
-    </productsContext.Provider>
-  );
+const INIT_STATE = {
+  products: [],
+  oneProduct: null
 };
 
-export default ProductsContextProvider;
+const reducer = (state = INIT_STATE, action) => {
+    switch (action.type) {
+      case CASE_GET_PRODUCTS: {
+        return {
+          ...state,
+          products: action.payload.data,
+        };
+      }
+      case CASE_GET_ONE_PRODUCT:{
+          return{
+              ...state,
+              oneProduct: action.payload.data
+          }
+      }
+      default:
+        return state;
+    }
+  };
+
+  const ProductsContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, INIT_STATE);
+    async function createProduct (newProduct){
+      await axios.post(PRODUCTS_API, newProduct)
+      getProducts()
+    }
+    async function getProducts() {
+      let result = await axios.get(`${PRODUCTS_API}`);
+      console.log(result)
+      dispatch({
+        type: CASE_GET_PRODUCTS,
+        payload: result,
+      });
+    }
+    return (
+      <productsContext.Provider
+        value={{
+          products: state.products,
+          oneProduct: state.oneProduct,
+          getProducts,
+          createProduct
+        }}
+      >
+        {children}
+      </productsContext.Provider>
+    );
+  };
+  export default ProductsContextProvider;
+  
