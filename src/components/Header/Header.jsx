@@ -49,7 +49,7 @@ const Header = () => {
               marginBottom: "15px",
               boxShadow: "3px 3px 3px grey",
             }}
-            width="100px"
+            width="15%"
             src="https://cityherowear.com/wp-content/uploads/2020/07/city_hero_logo_700x700-91x91.jpg"
             alt="logo"
           />
