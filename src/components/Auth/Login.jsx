@@ -14,7 +14,7 @@ const Login = () => {
     setHasAccount,
     emailError,
     passwordError,
-    authWithGoogle
+    authWithGoogle,
   } = useAuth();
   return (
     <>
@@ -79,7 +79,19 @@ const Login = () => {
               </>
             )}
           </div>
-          <button className="google-btn" style={{height:"30px"}} onClick={authWithGoogle}><img style={{marginRight:"10px"}} width="15px" src="https://www.tunartravel.com/img/google_logo.png" alt=""/>Google</button>
+          <button
+            className="google-btn"
+            style={{ height: "30px" }}
+            onClick={authWithGoogle}
+          >
+            <img
+              style={{ marginRight: "10px" }}
+              width="15px"
+              src="https://www.tunartravel.com/img/google_logo.png"
+              alt=""
+            />
+            Google
+          </button>
         </div>
       </section>
     </>

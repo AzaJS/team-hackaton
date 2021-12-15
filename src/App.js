@@ -9,7 +9,6 @@ import AuthContextProvider from "./contexts/authContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-
 import Routing from "./Routing";
 
 const App = () => {
