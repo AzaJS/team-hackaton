@@ -12,6 +12,8 @@ import Auth from "./components/Auth/Auth";
 import Cart from "./components/Cart/Cart";
 import { useAuth } from "./contexts/authContext";
 import AdminPage from "./components/AdminPage/AdminPage";
+import DetailsProduct from "./components/DetailsProduct/DetailsProduct";
+import EditProduct from "./components/EditProduct/EditProduct";
 
 
 const Routing = () => {
@@ -55,6 +57,11 @@ const Routing = () => {
       link: "/cart",
       element: <Cart />,
       id: 8,
+    },
+    {
+      link: "/products/:id",
+      element: <DetailsProduct />,
+      id: 9
     }
   ];
   const ADMIN_ROUTES = [
@@ -63,6 +70,11 @@ const Routing = () => {
       element: <AdminPage />,
       id: 1,
     },
+    {
+      link: "/edit/:id",
+      element: <EditProduct />,
+      id: 2
+    }
   ];
   const { user } = useAuth();
 
@@ -75,7 +87,7 @@ const Routing = () => {
         <Route
           path={item.link}
           element={
-            user.email === "tilekovjanar1@gmail.com" ? (
+            user.email === "tilekovjanar1@gmail.com" || user.email === "aziret1@gmail.com" ? (
               item.element
             ) : (
               <Navigate replace to="*" />

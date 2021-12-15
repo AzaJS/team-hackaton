@@ -8,8 +8,7 @@ import AuthContextProvider from "./contexts/authContext";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import AddProduct from "./components/AddProduct/AddProduct";
-import ProductsList from "./components/ProductsList/ProductsList";
+
 
 import Routing from "./Routing";
 
