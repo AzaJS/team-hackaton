@@ -1,6 +1,17 @@
 {
   "products": [
     {
+      "title": "Pijama",
+      "gender": "Men",
+      "price": "2102",
+      "type": "pijamas",
+      "description": "super pijama",
+      "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
+      "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
+      "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
+      "id": 1
+    },
+    {
       "title": "t-shirt",
       "gender": "Women",
       "price": "2102",
@@ -23,9 +34,9 @@
       "id": 3
     },
     {
-      "title": "pants slants",
+      "title": "pants",
       "gender": "Women",
-      "price": "1414131",
+      "price": "141414",
       "type": "pants",
       "description": "super pants",
       "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
@@ -54,6 +65,17 @@
       "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
       "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
       "id": 6
+    },
+    {
+      "title": "asdaa",
+      "gender": "Men",
+      "price": "750",
+      "type": "longsleeves",
+      "description": "asdaqwfasfasd",
+      "photo1": "ad",
+      "photo2": "a",
+      "photo3": "d",
+      "id": 7
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { Empty } from "antd";
 import React, { useContext, useEffect } from "react";
 import { productsContext } from "../../contexts/productsContext";
 
@@ -14,10 +15,12 @@ const MensProductsList = () => {
     return item.gender == "Men";
   });
   return (
-    <div className="womens-prod-list">
-      {list.map((item) => (
-        <ProductsCard key={item.id} item={item} />
-      ))}
+    <div className="prod-list">
+      {list.length > 0 ? (
+        list.map((item) => <ProductsCard key={item.id} item={item} />)
+      ) : (
+        <Empty />
+      )}
     </div>
   );
 };

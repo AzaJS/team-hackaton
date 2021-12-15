@@ -6,8 +6,8 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import Contacts from "./components/Contacts/Contacts";
 import Home from "./components/Home/Home";
 
-import MensProductsList from "./components/MensProductsList/MensProductsList";
-import WomensProductsList from "./components/WomensProductsList/WomensProductsList";
+import MensProductsList from "./components/ProductsList/MensProductsList";
+import WomensProductsList from "./components/ProductsList/WomensProductsList";
 import Auth from "./components/Auth/Auth";
 import Cart from "./components/Cart/Cart";
 import { useAuth } from "./contexts/authContext";
