@@ -1,10 +1,11 @@
 import { Badge } from "antd";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 import "./Header.css";
+import { cartContext } from "../../contexts/cartContext";
 
 const Header = () => {
   const location = useLocation();
@@ -12,6 +13,10 @@ const Header = () => {
     handleLogout,
     user: { email },
   } = useAuth();
+  const { getCart, cartLength } = useContext(cartContext);
+  useEffect(() => {
+    getCart();
+  }, []);
   const NAV_ITEMS = [
     {
       title: "ДЛЯ НЕГО",
@@ -57,7 +62,7 @@ const Header = () => {
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           {NAV_ITEMS.map((item) => (
             <Link
-            key={item.id}
+              key={item.id}
               to={item.link}
               style={{ display: "flex", justifyContent: "space-evenly" }}
               className={
@@ -69,7 +74,8 @@ const Header = () => {
               {item.title}
             </Link>
           ))}
-          {email === "tilekovjanar1@gmail.com" || email === "aziret1@gmail.com" ? (
+          {email === "tilekovjanar1@gmail.com" ||
+          email === "aziret1@gmail.com" ? (
             <Link
               className={
                 location.pathname === "/admin"
@@ -97,7 +103,7 @@ const Header = () => {
           <nav>
             <div style={{ marginRight: "20px" }}>
               <Link to="/cart">
-                <Badge>
+                <Badge style={{backgroundColor:"black"}} count={+cartLength}>
                   <ShoppingCartOutlined
                     style={{ fontSize: "30px", cursor: "pointer" }}
                   />
