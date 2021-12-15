@@ -24,7 +24,7 @@ const AddProduct = () => {
   };
   return (
     <>
-    <Button type="primary" onClick={showModal}>
+    <Button style={{backgroundColor: "grey", color: "white", borderRadius: "15px"}} onClick={showModal}>
         Add Product
       </Button>
       <Modal
