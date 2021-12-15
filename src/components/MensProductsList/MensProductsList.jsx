@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { productsContext } from "../../contexts/productsContext";
-import WomensProductsCard from "../WomensProductsList/WomensProductsCard";
+
+import ProductsCard from "../ProductsCard/ProductsCard"
 
 const MensProductsList = () => {
   const { getProducts, products } = useContext(productsContext);
@@ -10,12 +11,12 @@ const MensProductsList = () => {
   }, []);
   //   console.log(products)
   let list = products.filter((item) => {
-    return item.sex == "Men";
+    return item.gender == "Men";
   });
   return (
     <div className="womens-prod-list">
       {list.map((item) => (
-        <WomensProductsCard key={item.id} item={item} />
+        <ProductsCard key={item.id} item={item} />
       ))}
     </div>
   );

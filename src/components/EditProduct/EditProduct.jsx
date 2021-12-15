@@ -1,46 +1,36 @@
-import React, { useContext, useState } from "react";
-
-import { Form, Input, Button, Select } from "antd";
-
+import React, { useContext, useEffect } from "react";
+import { useNavigate, useParams } from "react-router";
+import { Button, Form, Input, Select } from "antd";
 import { productsContext } from "../../contexts/productsContext";
-import Modal from "antd/lib/modal/Modal";
 
-const AddProduct = () => {
-  const { createProduct } = useContext(productsContext);
-
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
-
-  const handleCancel = () => {
-    setIsModalVisible(false);
-  };
-
+const EditProduct = () => {
+  const params = useParams();
+  const navigate = useNavigate();
+  const { getOneProduct, oneProduct, updateProduct } =
+    useContext(productsContext);
+  const [form] = Form.useForm();
+  useEffect(() => {
+    getOneProduct(params.id);
+  }, []);
+  useEffect(() => {
+    form.setFieldsValue(oneProduct);
+  }, [oneProduct]);
   const onFinish = (values) => {
     console.log("Success:", values);
-    createProduct(values).then(() => handleCancel());
+    updateProduct(params.id, values).then(() => navigate("/admin"));
   };
   return (
-    <>
-    <Button type="primary" onClick={showModal}>
-        Add Product
-      </Button>
-      <Modal
-        title="Add Product"
-        visible={isModalVisible}
-        onCancel={handleCancel}
-        footer={null}
-      >
-    <Form
+    <div className="container" style={{ marginTop: "15px" }}>
+      <h2>Edit product</h2>
+      <Form
       name="basic"
+      onFinish={onFinish}
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 8 }}
       initialValues={{ remember: true }}
-      onFinish={onFinish}
-      // onFinishFailed={onFinishFailed}
       autoComplete="off"
+    //   layout="vertical"
+      form={form}
     >
       <Form.Item
         label="Title"
@@ -123,13 +113,12 @@ const AddProduct = () => {
       </Form.Item>
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Add product
+          Edit product
         </Button>
       </Form.Item>
     </Form>
-    </Modal>
-    </>
+    </div>
   );
 };
 
-export default AddProduct;
+export default EditProduct;

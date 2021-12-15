@@ -1,54 +1,59 @@
 {
   "products": [
     {
-      "title": "pijama",
-      "sex": "Men",
-      "price": "2100",
-      "description": "asdasdasdasd",
-      "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
-      "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
-      "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
-      "id": 1
-    },
-    {
-      "title": "pijama",
-      "sex": "Men",
-      "price": "2100",
-      "description": "asdasdasdasd",
+      "title": "t-shirt",
+      "gender": "Women",
+      "price": "2102",
+      "type": "t-shirt",
+      "description": "super t-shirt",
       "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
       "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
       "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
       "id": 2
     },
     {
-      "title": "pijama",
-      "sex": "Men",
-      "price": "2100",
-      "description": "asdasdasdasd",
+      "title": "longsleeve",
+      "gender": "Men",
+      "price": "21085",
+      "type": "longsleeves",
+      "description": "super ls",
       "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
       "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
       "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
       "id": 3
     },
     {
-      "title": "noski",
-      "price": "2520",
-      "description": "noski superpuper",
-      "photo1": "asd",
-      "photo2": "zxc",
-      "photo3": "xcv",
-      "sex": "Men",
+      "title": "pants slants",
+      "gender": "Women",
+      "price": "1414131",
+      "type": "pants",
+      "description": "super pants",
+      "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
+      "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
+      "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
       "id": 4
     },
     {
-        "title": "maika",
-        "price": "250",
-        "description": "maika superpuper",
-        "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
-        "photo2": "zxc",
-        "photo3": "xcv",
-        "sex": "Women",
-        "id": 5
-      }
+      "title": "kurtka",
+      "gender": "Men",
+      "price": "141414",
+      "type": "outwear",
+      "description": "super kurtka",
+      "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
+      "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
+      "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
+      "id": 5
+    },
+    {
+      "title": "kurtka",
+      "gender": "Women",
+      "price": "141414",
+      "type": "outwear",
+      "description": "super kurtka",
+      "photo1": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2364158687.jpg",
+      "photo2": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2363559736.jpg",
+      "photo3": "https://d2j6dbq0eux0bg.cloudfront.net/images/15253069/2362072878.jpg",
+      "id": 6
+    }
   ]
 }

@@ -69,7 +69,7 @@ const Header = () => {
               {item.title}
             </Link>
           ))}
-          {email === "tilekovjanar1@gmail.com" ? (
+          {email === "tilekovjanar1@gmail.com" || email === "aziret1@gmail.com" ? (
             <Link
               className={
                 location.pathname === "/admin"
