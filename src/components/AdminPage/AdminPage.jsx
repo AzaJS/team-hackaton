@@ -7,7 +7,7 @@ const AdminPage = () => {
         <div>
             <div className="admin-prod-list">
                 <AdminProductsList />
-                <AddProduct />
+                <p style={{display: "flex", justifyContent: "center"}}><AddProduct /></p>
             </div>
         </div>
     );

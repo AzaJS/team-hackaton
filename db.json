@@ -76,6 +76,81 @@
       "photo2": "a",
       "photo3": "d",
       "id": 7
+    },
+    {
+      "title": "noski",
+      "gender": "Men",
+      "price": "456",
+      "type": "t-shirt",
+      "description": "ddd",
+      "photo1": "ac",
+      "photo2": "ca",
+      "photo3": "aa",
+      "id": 8
+    },
+    {
+      "title": "noski",
+      "gender": "Men",
+      "price": "456",
+      "type": "t-shirt",
+      "description": "ddd",
+      "photo1": "ac",
+      "photo2": "ca",
+      "photo3": "aa",
+      "id": 9
+    },
+    {
+      "title": "noski",
+      "gender": "Men",
+      "price": "456",
+      "type": "t-shirt",
+      "description": "ddd",
+      "photo1": "ac",
+      "photo2": "ca",
+      "photo3": "aa",
+      "id": 10
+    },
+    {
+      "title": "janar",
+      "gender": "Men",
+      "price": "4141",
+      "type": "outwear",
+      "description": "superjanar",
+      "photo1": "mana",
+      "photo2": "nana",
+      "photo3": "anan",
+      "id": 11
+    },
+    {
+      "title": "janar",
+      "gender": "Men",
+      "price": "4141",
+      "type": "outwear",
+      "description": "superjanar",
+      "photo1": "mana",
+      "photo2": "nana",
+      "photo3": "anan",
+      "id": 12
+    },{
+      "title": "janar",
+      "gender": "Men",
+      "price": "4141",
+      "type": "outwear",
+      "description": "superjanar",
+      "photo1": "mana",
+      "photo2": "nana",
+      "photo3": "anan",
+      "id": 14
+    },{
+      "title": "janar",
+      "gender": "Men",
+      "price": "4141",
+      "type": "outwear",
+      "description": "superjanar",
+      "photo1": "mana",
+      "photo2": "nana",
+      "photo3": "anan",
+      "id": 15
     }
   ]
 }
