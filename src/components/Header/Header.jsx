@@ -185,7 +185,7 @@ const Header = () => {
           style={{ marginRight: "50px", fontSize: "18px" }}
         >
           <p>Tел: +996 556 80 42 60</p>
-          <p>Пн-Пт с 11:00 до 19:00 Мск</p>
+          <p>Пн-Пт с 11:00 до 19:00</p>
         </div>
       </div>
     </div>
