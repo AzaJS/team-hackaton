@@ -72,7 +72,7 @@ const Home = () => {
         <div style={{ display: "flex" }}>
           {/* <Link style={{width:"100%"}} to="/men"> */}
           <div
-            onClick={() => navigate("/men")}
+            onClick={() => navigate("/products/Men")}
             onMouseEnter={(e) => (e.target.style.opacity = "1")}
             onMouseLeave={(e) => (e.target.style.opacity = "0")}
             className="img-div"
@@ -82,7 +82,7 @@ const Home = () => {
               justifyContent: "center",
               color: "white",
               fontSize: "40px",
-              cursor:"pointer"
+              cursor: "pointer",
             }}
           >
             ДЛЯ НЕГО
@@ -90,7 +90,7 @@ const Home = () => {
           {/* </Link> */}
           {/* <Link style={{width:"100%"}} to="/women"> */}
           <div
-            onClick={() => navigate("/women")}
+            onClick={() => navigate("/products/Women")}
             onMouseEnter={(e) => (e.target.style.opacity = "1")}
             onMouseLeave={(e) => (e.target.style.opacity = "0")}
             className="img-div"
@@ -100,17 +100,15 @@ const Home = () => {
               justifyContent: "center",
               color: "white",
               fontSize: "40px",
-              cursor:"pointer"
+              cursor: "pointer",
             }}
           >
             ДЛЯ НЕЁ
           </div>
           {/* </Link> */}
         </div>
-
       </div>
     </>
-
   );
 };
 
