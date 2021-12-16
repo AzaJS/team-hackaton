@@ -4,6 +4,7 @@ import { useSearchParams, useParams } from "react-router-dom";
 import { productsContext } from "../../contexts/productsContext";
 
 import ProductsCard from "../ProductsCard/ProductsCard";
+import Filters from "../Filters/Filters";
 
 import "./ProductsList.css";
 
@@ -19,15 +20,36 @@ const ProductsList = () => {
 
   const { getProducts, products, productsTotalCount } =
     useContext(productsContext);
+  const [type, setType] = useState([]);
+  const [price, setPrice] = useState([1, 1000000]);
 
   const pageVisited = (page - 1) * limit;
 
   const paginateProducts = products?.slice(pageVisited, pageVisited + limit);
 
   useEffect(() => {
+    setSearchParams({
+      q: search,
+      _page: page,
+      _limit: limit,
+      type: type,
+      price_gte: price[0],
+      price_lte: price[1],
+    });
+  }, [search, page, type, price, limit]);
+  useEffect(() => {
     getProducts("gender", gender);
   }, [searchParams, gender]);
-
+  useEffect(() => {
+    setSearchParams({
+      q: search,
+      _page: page,
+      _limit: limit,
+      type: type,
+      price_gte: price[0],
+      price_lte: price[1],
+    });
+  }, []);
   useEffect(() => {
     setSearch("");
     setPage(1);
@@ -57,6 +79,12 @@ const ProductsList = () => {
           placeholder="Search..."
         />
       </div>
+      <Filters
+        type={type}
+        setType={setType}
+        price={price}
+        setPrice={setPrice}
+      />
       <div className="prod-list">
         {paginateProducts.length > 0 ? (
           paginateProducts.map((item) => (
