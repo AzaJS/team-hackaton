@@ -28,7 +28,6 @@ const ProductsCard = ({ item }) => {
             addProductToCart(item);
             setCheckInCart(checkItemInCart(item.id));
           }}
-          w
         />,
         <LikeFilled />,
         <Link to={`/products/${item.id}`}>

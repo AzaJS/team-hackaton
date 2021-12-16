@@ -3,9 +3,11 @@ import { Button, List } from "antd";
 
 import { cartContext } from "../../contexts/cartContext";
 import CartItem from "./CartItem";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { getCart, cart } = useContext(cartContext);
+  const navigate = useNavigate();
   useEffect(() => {
     getCart();
   }, []);
@@ -31,7 +33,17 @@ const Cart = () => {
             <h2 style={{ textDecoration: "underline grey" }}>
               Total: {cart?.totalPrice}$
             </h2>
-            <Button style={{borderRadius:"15px", backgroundColor:"green", color:"white", width:"15%"}}>Заказать</Button>
+            <Button
+              onClick={() => navigate("/order")}
+              style={{
+                borderRadius: "15px",
+                backgroundColor: "green",
+                color: "white",
+                width: "15%",
+              }}
+            >
+              Заказать
+            </Button>
           </div>
         }
         renderItem={(item) => <CartItem item={item} />}

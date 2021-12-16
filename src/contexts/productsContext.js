@@ -1,6 +1,5 @@
-import axios from "axios";
 import React, { useReducer } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 import { CASE_GET_ONE_PRODUCT, CASE_GET_PRODUCTS } from "../helpers/cases";
 import { PRODUCTS_API } from "../helpers/consts";
@@ -9,18 +8,19 @@ export const productsContext = React.createContext();
 
 const INIT_STATE = {
   products: [],
+  mensProducts: [],
   oneProduct: null,
-  productsTotalCount: 0
-
+  productsTotalCount: 0,
 };
 
 const reducer = (state = INIT_STATE, action) => {
+  console.log(action, "action");
   switch (action.type) {
     case CASE_GET_PRODUCTS: {
       return {
         ...state,
-        products: action.payload.data,
-        productsTotalCount: action.payload.headers["x-total-count"]
+        products: action.payload,
+        productsTotalCount: action.payload.length,
       };
     }
     case CASE_GET_ONE_PRODUCT: {
@@ -40,14 +40,36 @@ const ProductsContextProvider = ({ children }) => {
     await axios.post(PRODUCTS_API, newProduct);
     getProducts();
   }
-  async function getProducts() {
-    let result = await axios.get(`${PRODUCTS_API}${window.location.search}`);
-    console.log(result);
+
+  async function getProducts(filter, key) {
+    let url = `${PRODUCTS_API}`;
+
+    if (!window.location.search) {
+      url += `?${filter}=${key}`;
+    } else {
+      url += `${window.location.search}&${filter}=${key}`;
+    }
+
+    let { data } = await axios.get(url);
     dispatch({
       type: CASE_GET_PRODUCTS,
-      payload: result,
+      payload: data,
     });
   }
+
+  // async function getMensProducts(category) {
+  //   let { data } = await axios.get(
+  //     `${PRODUCTS_API}${window.location.search}&gender=${category}`
+  //   );
+  //   // console.log(result.data.gender, "resultgender")
+  //   // let genderArr = result.data.filter((item) => {
+  //   //   return item.gender === "Men";
+  //   // });
+  //   dispatch({
+  //     type: CASE_GET_MENS_PRODUCTS,
+  //     payload: data,
+  //   });
+  // }
 
   async function getOneProduct(id) {
     let result = await axios.get(`${PRODUCTS_API}/${id}`);
@@ -74,7 +96,7 @@ const ProductsContextProvider = ({ children }) => {
         createProduct,
         deleteProduct,
         updateProduct,
-        getOneProduct
+        getOneProduct,
       }}
     >
       {children}

@@ -45,7 +45,7 @@
       "id": 4
     },
     {
-      "title": "kurtka",
+      "title": "kurtka1",
       "gender": "Men",
       "price": "141414",
       "type": "outwear",
@@ -78,9 +78,9 @@
       "id": 7
     },
     {
-      "title": "noski",
+      "title": "nosi",
       "gender": "Men",
-      "price": "456",
+      "price": "466",
       "type": "t-shirt",
       "description": "ddd",
       "photo1": "ac",
@@ -89,9 +89,9 @@
       "id": 8
     },
     {
-      "title": "noski",
+      "title": "nosk1",
       "gender": "Men",
-      "price": "456",
+      "price": "451",
       "type": "t-shirt",
       "description": "ddd",
       "photo1": "ac",
@@ -122,35 +122,39 @@
       "id": 11
     },
     {
-      "title": "janar",
+      "title": "janarm",
       "gender": "Men",
-      "price": "4141",
+      "price": "4143",
       "type": "outwear",
       "description": "superjanar",
       "photo1": "mana",
       "photo2": "nana",
       "photo3": "anan",
       "id": 12
-    },{
-      "title": "janar",
+    },
+    {
+      "title": "janarb",
       "gender": "Men",
-      "price": "4141",
+      "price": "4142",
       "type": "outwear",
       "description": "superjanar",
       "photo1": "mana",
       "photo2": "nana",
       "photo3": "anan",
       "id": 14
-    },{
-      "title": "janar",
+    },
+    {
+      "title": "janarl",
       "gender": "Men",
-      "price": "4141",
+      "price": "4140",
       "type": "outwear",
       "description": "superjanar",
       "photo1": "mana",
       "photo2": "nana",
       "photo3": "anan",
       "id": 15
+
+
     }
   ]
 }

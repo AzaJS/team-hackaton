@@ -20,12 +20,12 @@ const Header = () => {
   const NAV_ITEMS = [
     {
       title: "ДЛЯ НЕГО",
-      link: "/men",
+      link: "/products/Men",
       id: 1,
     },
     {
       title: "ДЛЯ НЕЁ",
-      link: "/women",
+      link: "/products/Women",
       id: 2,
     },
     {
@@ -103,7 +103,7 @@ const Header = () => {
           <nav>
             <div style={{ marginRight: "20px" }}>
               <Link to="/cart">
-                <Badge style={{backgroundColor:"black"}} count={+cartLength}>
+                <Badge style={{ backgroundColor: "black" }} count={+cartLength}>
                   <ShoppingCartOutlined
                     style={{ fontSize: "30px", cursor: "pointer" }}
                   />
@@ -126,9 +126,12 @@ const Header = () => {
             </div>
           </nav>
         </div>
-        <div style={{ marginRight: "50px", fontSize: "18px" }}>
-          <p>тел: +7 (495) 723-03-39</p>
-          <p>Пн-Пт с 11 до 19 Мск</p>
+        <div
+          className="info-nav"
+          style={{ marginRight: "50px", fontSize: "18px" }}
+        >
+          <p>Tел: +996 556 80 42 60</p>
+          <p>Пн-Пт с 11:00 до 19:00 Мск</p>
         </div>
       </div>
     </div>
