@@ -5,7 +5,6 @@ import { productsContext } from "../../contexts/productsContext";
 import Filters from "../Filters/Filters";
 
 import ProductsCard from "../ProductsCard/ProductsCard";
-import Filters from "../Filters/Filters";
 
 import "./ProductsList.css";
 
@@ -31,8 +30,6 @@ const ProductsList = () => {
 
   const { getProducts, products, productsTotalCount } =
     useContext(productsContext);
-  const [type, setType] = useState([]);
-  const [price, setPrice] = useState([1, 1000000]);
 
   const pageVisited = (page - 1) * limit;
   const paginateProducts = products?.slice(pageVisited, pageVisited + limit);
@@ -40,7 +37,6 @@ const ProductsList = () => {
   useEffect(() => {
     getProducts(gender, type, price[0], price[1]);
   }, [searchParams, gender, type, price]);
-
 
   useEffect(() => {
     setSearch("");
@@ -95,12 +91,6 @@ const ProductsList = () => {
           />
         </div>
       </div>
-      <Filters
-        type={type}
-        setType={setType}
-        price={price}
-        setPrice={setPrice}
-      />
       <div className="prod-list">
         {paginateProducts.length > 0 ? (
           paginateProducts.map((item) => (

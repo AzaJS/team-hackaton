@@ -19,7 +19,7 @@ const ProductsCard = ({ item }) => {
   return (
     <Card
       hoverable
-      style={{ width: 240, margin: "0 15px" }}
+      style={{ width: 240, margin: "0 15px"}}
       cover={<img alt="example" src={item.photo1} />}
       actions={[
         <ShoppingCartOutlined
