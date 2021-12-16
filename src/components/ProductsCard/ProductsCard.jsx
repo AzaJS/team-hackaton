@@ -30,7 +30,7 @@ const ProductsCard = ({ item }) => {
           }}
         />,
         <LikeFilled />,
-        <Link to={`/products/${item.id}`}>
+        <Link to={`/product/${item.id}`}>
           <EllipsisOutlined key="ellipsis" />
         </Link>,
       ]}

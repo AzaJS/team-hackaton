@@ -28,6 +28,10 @@ nav {
   cursor: pointer;
 }
 
+.info-nav {
+  margin-top: 15px;
+}
+
 @media (max-width: 1024px) {
   .sign-btn {
     height: 30px;
@@ -39,6 +43,20 @@ nav {
   }
   .header_active p {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 840px) {
+  .sign-btn {
+    height: 20px;
+    width: 50px;
+    font-size: 11px;
+  }
+  .header_active {
+    font-size: 11px;
+  }
+  .header_active p {
+    font-size: 13px;
   }
 }
 
