@@ -13,7 +13,7 @@ import { useAuth } from "./contexts/authContext";
 import AdminPage from "./components/AdminPage/AdminPage";
 import DetailsProduct from "./components/DetailsProduct/DetailsProduct";
 import EditProduct from "./components/EditProduct/EditProduct";
-import OrderForm from "./components/OrderForm/OrderForm";
+import CreditApp from "./components/CreditCard/CreditApp"
 
 const Routing = () => {
   let PUBLIC_ROUTES = [
@@ -58,9 +58,9 @@ const Routing = () => {
       id: 8,
     },
     {
-      link: "/order",
-      element: <OrderForm />,
-      id: 9,
+      link: "/credit",
+      element: <CreditApp />,
+      id: 8,
     },
     // {
     //   link: "/products/:type",
