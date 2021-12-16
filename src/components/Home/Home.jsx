@@ -25,7 +25,7 @@ const Home = () => {
               alt=""
             />{" "}
           </div>
-          <div>
+          <div className="girl-img">
             <img
               style={{ marginTop: "-130px" }}
               width="100%"
@@ -55,13 +55,17 @@ const Home = () => {
         >
           КОЛЛЕКЦИИ
         </div>
-        <div style={{ display: "flex" }}>
+        <div
+          className="collection-img"
+          style={{ display: "flex", height: "85vh" }}
+        >
           <img
             className="home-img"
             width="50%"
             src="https://cityherowear.com/wp-content/uploads/2019/03/samuray-story-2_1200_minus-red_progressive.jpg"
             alt=""
           />
+
           <img
             className="home-img"
             width="50%"
@@ -69,13 +73,16 @@ const Home = () => {
             alt=""
           />
         </div>
-        <div style={{ display: "flex" }}>
+        <div
+          className="collection"
+          style={{ display: "flex", height: "85vh", marginTop: "-85vh" }}
+        >
           {/* <Link style={{width:"100%"}} to="/men"> */}
           <div
             onClick={() => navigate("/products/Men")}
             onMouseEnter={(e) => (e.target.style.opacity = "1")}
             onMouseLeave={(e) => (e.target.style.opacity = "0")}
-            className="img-div"
+            className="collection-img-div"
             style={{
               display: "flex",
               alignItems: "center",
@@ -93,7 +100,7 @@ const Home = () => {
             onClick={() => navigate("/products/Women")}
             onMouseEnter={(e) => (e.target.style.opacity = "1")}
             onMouseLeave={(e) => (e.target.style.opacity = "0")}
-            className="img-div"
+            className="collection-img-div"
             style={{
               display: "flex",
               alignItems: "center",

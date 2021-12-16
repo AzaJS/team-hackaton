@@ -64,12 +64,12 @@ const Cart = () => {
   };
 
   const onFinish = (values) => {
-    navigate("/credit")
+    navigate("/credit");
     console.log("Received values of form: ", values);
   };
   return (
     <>
-      <div class="container">
+      <div className="container">
         <List
           itemLayout="vertical"
           size="large"

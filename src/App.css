@@ -40,3 +40,7 @@
 .items-list::-webkit-scrollbar-track {
   border-width: 0;
 }
+
+::-webkit-scrollbar {
+  min-height: 100px;
+}

@@ -60,33 +60,88 @@ const Header = () => {
           />
         </Link>
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.id}
-              to={item.link}
-              style={{ display: "flex", justifyContent: "space-evenly" }}
-              className={
-                location.pathname === item.link
-                  ? "navbar__item-active"
-                  : "navbar__item"
-              }
-            >
-              {item.title}
-            </Link>
-          ))}
-          {email === "tilekovjanar1@gmail.com" ||
-          email === "aziret1@gmail.com" ? (
-            <Link
-              className={
-                location.pathname === "/admin"
-                  ? "navbar__item-active"
-                  : "navbar__item"
-              }
-              to="/admin"
-            >
-              АДМИН
-            </Link>
-          ) : null}
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+            <div className="menu__box">
+              {NAV_ITEMS.map((item) => (
+                <li>
+                  <Link
+                    key={item.id}
+                    to={item.link}
+                    // style={{ margin: "0 5px" }}
+                    className="menu__item"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+              {email === "tilekovjanar1@gmail.com" ||
+              email === "aziret1@gmail.com" ? (
+                <Link className="menu__item" to="/admin">
+                  АДМИН
+                </Link>
+              ) : null}
+            </div>
+            {/* <ul class="menu__box">
+              <li>
+                <a class="menu__item" href="#">
+                  Главная
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  Проекты
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  Команда
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  Блог
+                </a>
+              </li>
+              <li>
+                <a class="menu__item" href="#">
+                  Контакты
+                </a>
+              </li>
+            </ul> */}
+          </div>
+          <div className="links">
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.id}
+                to={item.link}
+                style={{ margin: "0 5px" }}
+                className={
+                  location.pathname === item.link
+                    ? "navbar__item-active"
+                    : "navbar__item"
+                }
+              >
+                {item.title}
+              </Link>
+            ))}
+            {email === "tilekovjanar1@gmail.com" ||
+            email === "aziret1@gmail.com" ? (
+              <Link
+                className={
+                  location.pathname === "/admin"
+                    ? "navbar__item-active"
+                    : "navbar__item"
+                }
+                to="/admin"
+              >
+                АДМИН
+              </Link>
+            ) : null}
+          </div>
         </div>
       </div>
       <div
