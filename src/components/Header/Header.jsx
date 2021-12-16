@@ -89,7 +89,6 @@ const Header = () => {
           ) : null}
         </div>
       </div>
-
       <div
         style={{
           width: "50vw",

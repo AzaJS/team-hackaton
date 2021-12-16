@@ -53,7 +53,7 @@ const Routing = () => {
       id: 7,
     },
     {
-      link: "/products/:id",
+      link: "/product/:id",
       element: <DetailsProduct />,
       id: 8,
     },
@@ -62,6 +62,11 @@ const Routing = () => {
       element: <CreditApp />,
       id: 8,
     },
+    // {
+    //   link: "/products/:type",
+    //   element: <ProductsList />,
+    //   id: 10,
+    // },
   ];
   const ADMIN_ROUTES = [
     {

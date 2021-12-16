@@ -2,6 +2,7 @@ import { Empty, Input, Pagination } from "antd";
 import React, { useContext, useEffect, useState } from "react";
 import { useSearchParams, useParams } from "react-router-dom";
 import { productsContext } from "../../contexts/productsContext";
+import Filters from "../Filters/Filters";
 
 import ProductsCard from "../ProductsCard/ProductsCard";
 import Filters from "../Filters/Filters";
@@ -10,11 +11,21 @@ import "./ProductsList.css";
 
 const ProductsList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+
   const { gender } = useParams();
+
+  const [category, setCategory] = useState([]);
+
+  const [price, setPrice] = useState([null, null]);
+
+  // const [priceValue, setPriceValue] = useState();
+
   const [search, setSearch] = useState(
     searchParams.get("q") ? searchParams.get("q") : ""
   );
   const [page, setPage] = useState(1);
+
+  const [type, setType] = useState();
 
   const limit = 4;
 
@@ -24,32 +35,13 @@ const ProductsList = () => {
   const [price, setPrice] = useState([1, 1000000]);
 
   const pageVisited = (page - 1) * limit;
-
   const paginateProducts = products?.slice(pageVisited, pageVisited + limit);
 
   useEffect(() => {
-    setSearchParams({
-      q: search,
-      _page: page,
-      _limit: limit,
-      type: type,
-      price_gte: price[0],
-      price_lte: price[1],
-    });
-  }, [search, page, type, price, limit]);
-  useEffect(() => {
-    getProducts("gender", gender);
-  }, [searchParams, gender]);
-  useEffect(() => {
-    setSearchParams({
-      q: search,
-      _page: page,
-      _limit: limit,
-      type: type,
-      price_gte: price[0],
-      price_lte: price[1],
-    });
-  }, []);
+    getProducts(gender, type, price[0], price[1]);
+  }, [searchParams, gender, type, price]);
+
+
   useEffect(() => {
     setSearch("");
     setPage(1);
@@ -69,15 +61,39 @@ const ProductsList = () => {
     setPage(page);
   };
 
+  // const handleFilter = (e) => {
+  //   const value = e.target.value;
+
+  //   setSearchParams({
+  //     type: value,
+  //   });
+  //   setCategory(value);
+  // };
+
   return (
     <div className="container">
-      <div className="serach-prod">
-        <Input.Search
-          value={search}
-          onChange={handleSearch}
-          style={{ width: "25vw" }}
-          placeholder="Search..."
-        />
+      <div className="search-filter">
+        <div className="search-prod">
+          <Input.Search
+            value={search}
+            onChange={handleSearch}
+            style={{ width: "25vw" }}
+            placeholder="Search..."
+          />
+        </div>
+        <div className="filter-prod">
+          <Filters
+            category={type}
+            setCategory={(e) => {
+              setType(e);
+              console.log(e);
+            }}
+            priceValue={price}
+            setPriceValue={(e) => {
+              setPrice(e);
+            }}
+          />
+        </div>
       </div>
       <Filters
         type={type}

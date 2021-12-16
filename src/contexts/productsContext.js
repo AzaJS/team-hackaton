@@ -8,7 +8,6 @@ export const productsContext = React.createContext();
 
 const INIT_STATE = {
   products: [],
-  mensProducts: [],
   oneProduct: null,
   productsTotalCount: 0,
 };
@@ -41,13 +40,29 @@ const ProductsContextProvider = ({ children }) => {
     getProducts();
   }
 
-  async function getProducts(filter, key) {
+  async function getProducts(gender, type, priceGte, priceLte) {
+    console.log(gender, type);
     let url = `${PRODUCTS_API}`;
 
+    let options = "?";
+
+    if (gender) {
+      options += `gender=${gender}`;
+    }
+    if (priceGte || priceLte) {
+      options += `&price_gte=${priceGte}&price_lte=${priceLte}`;
+    }
+
+    if (type) {
+      for (const t of type) {
+        options += `&type=${t}`;
+      }
+    }
+
     if (!window.location.search) {
-      url += `?${filter}=${key}`;
+      url += options;
     } else {
-      url += `${window.location.search}&${filter}=${key}`;
+      url += `${window.location.search}&${options}`;
     }
 
     let { data } = await axios.get(url);
