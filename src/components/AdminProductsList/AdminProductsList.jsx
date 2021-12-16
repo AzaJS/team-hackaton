@@ -36,7 +36,7 @@ const AdminProductsList = () => {
                         Delete
                       </a>,
                       <Link to={`/edit/${item.id}`}>edit</Link>,
-                      <Link to={`/products/${item.id}`}>more</Link>,
+                      <Link to={`/product/${item.id}`}>more</Link>,
                     ]}
                   >
                     <List.Item.Meta
@@ -66,7 +66,7 @@ const AdminProductsList = () => {
                         Delete
                       </a>,
                       <Link to={`/edit/${item.id}`}>edit</Link>,
-                      <Link to={`/products/${item.id}`}>more</Link>,
+                      <Link to={`/product/${item.id}`}>more</Link>,
                     ]}
                   >
                     <List.Item.Meta

@@ -69,7 +69,7 @@ const Cart = () => {
   };
   return (
     <>
-      <div class="container">
+      <div className="container">
         <List
           itemLayout="vertical"
           size="large"
