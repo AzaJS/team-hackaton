@@ -35,7 +35,7 @@ const ProductsCard = ({ item }) => {
         </Link>,
       ]}
     >
-      <Card.Meta title={item.title} description={<></>} />
+      <Card.Meta title={item.title} description={"$" + item.price} />
     </Card>
   );
 };
