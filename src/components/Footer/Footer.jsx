@@ -29,28 +29,31 @@ const Footer = () => {
       >
         <div>
           <h2>Мастерская</h2>
-          <p>+7 (495) 723-03-39</p>
-          <p>Пн - Пт с 11 до 19 Мск</p>
+          <p>+996 556 80 42 60</p>
+          <p>Пн - Пт с 11:00 до 19:00</p>
           <p>© 2021 CITY HERO™</p>
         </div>
         <div>
           <h2>Мы в соцсетях</h2>
           <div>
-            <a href="https://facebook.com">
+            <a
+              href="https://www.facebook.com/cityheroworkshop/"
+              target="_blank"
+            >
               <img
                 className="footer-img"
                 src="https://cdn-icons-png.flaticon.com/512/59/59439.png"
                 alt=""
               />
             </a>
-            <a href="https://instagram.com">
+            <a href="https://www.instagram.com/city_hero/" target="_blank">
               <img
                 className="footer-img"
                 src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
                 alt=""
               />
             </a>
-            <a href="https://vk.com">
+            <a href="https://vk.com/cityhero" target="_blank">
               <img
                 className="footer-img"
                 src="https://cdn-icons-png.flaticon.com/512/25/25684.png"
