@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Card from "react-credit-cards";
 import "./CreditCard.css";
 
@@ -15,7 +15,6 @@ import { Button } from "antd";
 import { Link } from "react-router-dom";
 
 export default class App extends React.Component {
-  
   state = {
     number: "",
     name: "",
@@ -80,12 +79,12 @@ export default class App extends React.Component {
         <div
           className="App-payment"
           style={{
-            marginTop:"50px",
+            marginTop: "50px",
             width: "50%",
             height: "70%",
             textAlign: "center",
             fontSize: "15px",
-            padding:"20px"
+            padding: "20px",
           }}
         >
           <h1 style={{ color: "black", marginBottom: "5px" }}>

@@ -29,11 +29,35 @@
   left: 0;
 } */
 
-.img-div {
+.collection-img-div {
   background-color: rgba(0, 0, 0, 0.37);
   width: 50%;
-  height: 546px;
-  margin-top: -546px;
+  height: 85vh;
+  /* margin-top: -546px; */
   opacity: 0;
   transition: 0.5s;
+}
+
+@media (max-width: 900px) {
+  .home-img {
+    height: 75vh;
+  }
+  .collection-img-div {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 878px) {
+  .girl-img img {
+    margin-top: -20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-img {
+    height: 65vh;
+  }
+  .collection-img-div {
+    height: 65vh;
+  }
 }

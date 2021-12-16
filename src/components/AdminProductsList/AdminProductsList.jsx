@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 
-import { List, Avatar, Row, Col } from "antd";
+import { List, Avatar, Col } from "antd";
 import { Link } from "react-router-dom";
 import { productsContext } from "../../contexts/productsContext";
 
@@ -10,10 +10,10 @@ const AdminProductsList = () => {
     getProducts();
   }, []);
   let womensList = products.filter((item) => {
-    return item.gender == "Women";
+    return item.gender === "Women";
   });
   let mensList = products.filter((item) => {
-    return item.gender == "Men";
+    return item.gender === "Men";
   });
 
   console.log(womensList, "womenslist");
@@ -80,8 +80,11 @@ const AdminProductsList = () => {
                   </List.Item>
                 )}
               />
-          </Col>
-        </div>
+            </List.Item>
+          )}
+        />
+      </Col>
+    </div>
   );
 };
 

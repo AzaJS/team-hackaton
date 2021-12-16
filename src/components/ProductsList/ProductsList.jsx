@@ -32,6 +32,7 @@ const ProductsList = () => {
     useContext(productsContext);
 
   const pageVisited = (page - 1) * limit;
+
   const paginateProducts = products?.slice(pageVisited, pageVisited + limit);
 
   useEffect(() => {
